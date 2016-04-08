@@ -1,0 +1,24 @@
+{
+  "name": "spring-angular-calculator",
+  "description": "spring-angular-calculator",
+  "main": "index.js",
+  "authors": [
+    "fisher <fisher377164@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fisher377164/spring-angular-calculator",
+  "moduleType": [
+    "es6"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angular2#^1.5.3",
+    "angular-ui-router": "ui-router#^0.2.18"
+  }
+}

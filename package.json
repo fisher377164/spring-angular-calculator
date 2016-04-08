@@ -1,0 +1,36 @@
+{
+  "name": "spring-angular-calculator",
+  "version": "1.0.0",
+  "description": "spring-angular-calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fisher377164/spring-angular-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fisher377164/spring-angular-calculator/issues"
+  },
+  "homepage": "https://github.com/fisher377164/spring-angular-calculator#readme",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "browser-sync": "^2.11.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-typescript": "^2.12.2",
+    "stylus": "^0.54.2"
+  },
+  "dependencies": {
+    "ng2-material": "^0.3.4"
+  }
+}
