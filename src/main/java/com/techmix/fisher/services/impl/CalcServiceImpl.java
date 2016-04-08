@@ -8,9 +8,13 @@ import com.techmix.fisher.exeptions.NoSuchOperationException;
 import com.techmix.fisher.repository.TransactionLogRepository;
 import com.techmix.fisher.services.CalcService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +25,8 @@ import java.util.List;
 @Service
 @Transactional
 public class CalcServiceImpl implements CalcService {
+
+    private static final int PAGE_SIZE = 50;
 
     @Autowired
     private TransactionLogRepository transactionLogRepository;
@@ -62,12 +68,13 @@ public class CalcServiceImpl implements CalcService {
     }
 
     @Override
-    public TransactionLogDTO getLog(int operationId) {
-        return null;
-    }
+    public List<TransactionLogDTO> getLogsPage(Integer page) {
+        PageRequest request =
+                new PageRequest(page - 1, PAGE_SIZE, Sort.Direction.ASC, "logId");
+        Page<TransactionLog> userPage = transactionLogRepository.findAll(request);
+        List<TransactionLogDTO> logs = new ArrayList<>();
+        userPage.forEach(log -> logs.add(new TransactionLogDTO(log)));
 
-    @Override
-    public List<TransactionLogDTO> getAllLogs() {
-        return null;
+        return logs;
     }
 }

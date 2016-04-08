@@ -16,7 +16,5 @@ public interface CalcService {
     TransactionLogDTO calculate(CalcDTO calcDTO)
             throws NoSuchOperationException, DivisionZeroException;
 
-    TransactionLogDTO getLog(int operationId);
-
-    List<TransactionLogDTO> getAllLogs();
+    List<TransactionLogDTO> getLogsPage(Integer page) ;
 }
