@@ -6,4 +6,36 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
                     http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="fisher (generated)" id="1452767842986-1">
+        <sql dbms="postgresql"
+             endDelimiter="\n;"
+             splitStatements="true"
+             stripComments="true">INSERT INTO operations  (operations_id, operation) VALUES (1, '+');
+        </sql>
+        <comment>Add "+" to operations</comment>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1452767842986-2">
+        <sql dbms="postgresql"
+             endDelimiter="\n;"
+             splitStatements="true"
+             stripComments="true">INSERT INTO operations  (operations_id, operation) VALUES (2, '-');
+        </sql>
+        <comment>Add "-" to operations</comment>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1452767842986-3">
+        <sql dbms="postgresql"
+             endDelimiter="\n;"
+             splitStatements="true"
+             stripComments="true">INSERT INTO operations  (operations_id, operation) VALUES (3, '*');
+        </sql>
+        <comment>Add "*" to operations</comment>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1452767842986-4">
+        <sql dbms="postgresql"
+             endDelimiter="\n;"
+             splitStatements="true"
+             stripComments="true">INSERT INTO operations  (operations_id, operation) VALUES (4, '/');
+        </sql>
+        <comment>Add "/" to operations</comment>
+    </changeSet>
 </databaseChangeLog>

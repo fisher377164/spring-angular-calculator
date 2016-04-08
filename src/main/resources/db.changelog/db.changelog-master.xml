@@ -6,6 +6,6 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
                     http://www.liquibase.org/xml/ns/dbchangelog
                     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <include file="db/changelog/db.changelog-schema.xml"/>
-    <include file="db/changelog/db.changelog-queries.xml"/>
+    <include file="db.changelog/db.changelog-schema.xml"/>
+    <include file="db.changelog/db.changelog-queries.xml"/>
 </databaseChangeLog>

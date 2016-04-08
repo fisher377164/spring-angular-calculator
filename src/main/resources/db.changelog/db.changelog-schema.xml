@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
-                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
-                    http://www.liquibase.org/xml/ns/dbchangelog
-                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet author="fisher (generated)" id="1460113279859-1">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1460113279859-2">
+        <createTable tableName="operations">
+            <column name="operations_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="operation" type="VARCHAR(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1460118865929-2">
+        <createTable tableName="transaction_log">
+            <column name="log_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="left_operand" type="FLOAT8"/>
+            <column name="operation_id" type="INT"/>
+            <column name="result" type="FLOAT8"/>
+            <column name="right_operand" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1460118865929-3">
+        <addPrimaryKey columnNames="log_id" constraintName="transaction_log_pkey" tableName="transaction_log"/>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1460113279859-4">
+        <addPrimaryKey columnNames="operations_id" constraintName="operations_pkey" tableName="operations"/>
+    </changeSet>
+    <changeSet author="fisher (generated)" id="1460113279859-6">
+        <addForeignKeyConstraint baseColumnNames="operation_id" baseTableName="transaction_log" constraintName="fk_operations" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="operations_id" referencedTableName="operations"/>
+    </changeSet>
 </databaseChangeLog>

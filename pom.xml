@@ -22,6 +22,9 @@
     </prerequisites>
 
     <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <liquibase>3.4.2</liquibase>
         <lombok>1.16.8</lombok>
         <postgresql>9.1-901-1.jdbc4</postgresql>
@@ -79,7 +82,7 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase}</version>
                 <configuration>
-                    <outputChangeLogFile>src/main/resources/db/changelog/db.changelog-override.xml</outputChangeLogFile>
+                    <outputChangeLogFile>src/main/resources/db.changelog-override.xml</outputChangeLogFile>
                     <defaultSchemaName>public</defaultSchemaName>
                     <url>jdbc:postgresql://localhost:5432/calculator</url>
                     <username>test</username>
