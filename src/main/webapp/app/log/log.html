@@ -1,20 +1,23 @@
 <div ng-controller="LogController">
-    <h2>Last 50 results</h2>
-    <table class="table table-bordered table-hover">
-        <tr>
-            <th>id</th>
-            <th>left</th>
-            <th>operation</th>
-            <th>right</th>
-            <th>result</th>
-        </tr>
-        <tr ng-repeat="log in logs">
-            <th>{{log.logId}}</th>
-            <th>{{log.leftOperand}}</th>
-            <th>{{log.operation}}</th>
-            <th>{{log.rightOperand}}</th>
-            <th>{{log.result}}</th>
-        </tr>
+    <div class="container">
 
-    </table>
+        <h3>Last 50 results</h3>
+        <table class="table table-bordered table-hover">
+            <tr>
+                <th>id</th>
+                <th>left</th>
+                <th>operation</th>
+                <th>right</th>
+                <th>result</th>
+            </tr>
+            <tr ng-repeat="log in logs">
+                <th>{{log.logId}}</th>
+                <th>{{log.leftOperand}}</th>
+                <th>{{log.operation}}</th>
+                <th>{{log.rightOperand}}</th>
+                <th>{{log.result}}</th>
+            </tr>
+
+        </table>
+    </div>
 </div>

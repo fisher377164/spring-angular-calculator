@@ -12,9 +12,6 @@ angular.module('calcApp')
             .state('app', {
                     abstract: true,
                     views: {
-                        'headers@': {
-                            templateUrl: "app/header/header.html"
-                        },
                         'navbar@': {
                             templateUrl: "app/navbar/navbar.html"
                         },

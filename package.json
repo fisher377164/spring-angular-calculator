@@ -31,8 +31,5 @@
     "gulp-typescript": "^2.12.2",
     "gulp-uglify": "^1.5.3",
     "stylus": "^0.54.2"
-  },
-  "dependencies": {
-    "ng2-material": "^0.3.4"
   }
 }
