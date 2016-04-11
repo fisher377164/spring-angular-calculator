@@ -1,5 +1,7 @@
 package com.techmix.fisher.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +10,7 @@ import java.util.List;
  * @author fisher
  * @since 4/8/16
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ErrorDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -70,7 +70,7 @@ public class CalcServiceImpl implements CalcService {
     @Override
     public List<TransactionLogDTO> getLogsPage(Integer page) {
         PageRequest request =
-                new PageRequest(page - 1, PAGE_SIZE, Sort.Direction.ASC, "logId");
+                new PageRequest(page - 1, PAGE_SIZE, Sort.Direction.DESC, "logId");
         Page<TransactionLog> userPage = transactionLogRepository.findAll(request);
         List<TransactionLogDTO> logs = new ArrayList<>();
         userPage.forEach(log -> logs.add(new TransactionLogDTO(log)));

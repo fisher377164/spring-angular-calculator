@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author fisher
@@ -15,7 +16,9 @@ import javax.validation.constraints.NotNull;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class CalcDTO {
+public class CalcDTO implements Serializable{
+
+    private static final long serialVersionUID = 1L;
 
     @NotNull
     private Double leftOperand;
@@ -26,4 +29,12 @@ public class CalcDTO {
     @NotNull
     private String operation;
 
+    public CalcDTO() {
+    }
+
+    public CalcDTO(Double leftOperand, Double rightOperand, String operation) {
+        this.leftOperand = leftOperand;
+        this.rightOperand = rightOperand;
+        this.operation = operation;
+    }
 }

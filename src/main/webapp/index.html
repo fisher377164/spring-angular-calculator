@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="calcApp">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script defer src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script defer src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+<div>
+    <div ui-view="headers"></div>
+    <div ui-view="navbar"></div>
+</div>
+<div>
+    <div ui-view="content"></div>
+</div>
+<div ui-view="footers"></div>
+
+
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+
+    <script src="./app/app.js"></script>
+    <script src="./app/routs.js"></script>
+    <script src="./app/calc/calc.controller.js"></script>
+    <script src="./app/log/log.controller.js"></script>
+
+
+</body>
+
+</html>

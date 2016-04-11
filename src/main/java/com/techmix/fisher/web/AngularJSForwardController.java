@@ -20,15 +20,15 @@ public class AngularJSForwardController {
     private final Logger log = LoggerFactory.getLogger(AngularJSForwardController.class);
 
     @RequestMapping(value = {
-            "/*"
+            "/",
+            "/log"
     }, method = RequestMethod.GET)
     public void pageForward(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
         forward(httpRequest, httpResponse);
     }
 
     private void forward(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
-
-        RequestDispatcher dispatcher = httpRequest.getRequestDispatcher("/built/index.html");
+        RequestDispatcher dispatcher = httpRequest.getRequestDispatcher("index.html");
         try {
             dispatcher.forward(httpRequest, httpResponse);
         } catch (Exception e) {

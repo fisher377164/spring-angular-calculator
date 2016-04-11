@@ -72,6 +72,4 @@ hs_err_pid*
 
 node_modules/
 
-bower_components/
-
 src/main/webapp/built/*

@@ -1,6 +1,9 @@
 package com.techmix.fisher.entity;
 
-import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -8,7 +11,10 @@ import javax.persistence.*;
  * @author fisher
  * @since 4/8/16
  */
-@Data
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
 @Entity
 @Table(name = "transaction_log")
 public class TransactionLog {
@@ -38,7 +44,7 @@ public class TransactionLog {
         public static Operations parse(String operation) {
             Operations right = null;
             for (Operations item : Operations.values()) {
-                if (item.getOperation().equals(operation)){
+                if (item.getOperation().equals(operation)) {
                     right = item;
                     break;
                 }
@@ -78,4 +84,13 @@ public class TransactionLog {
         return Operations.parse(this.operationId);
     }
 
+    public TransactionLog(Double leftOperand, Double rightOperand, Double result, int operationId) {
+        this.leftOperand = leftOperand;
+        this.rightOperand = rightOperand;
+        this.result = result;
+        this.operationId = operationId;
+    }
+
+    public TransactionLog() {
+    }
 }

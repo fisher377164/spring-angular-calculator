@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
+
 /**
  * @author fisher
  * @since 4/8/16
@@ -15,7 +17,9 @@ import lombok.ToString;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class TransactionLogDTO {
+public class TransactionLogDTO implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Long logId;
 

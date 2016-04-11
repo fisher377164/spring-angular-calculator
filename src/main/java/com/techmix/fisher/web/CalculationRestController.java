@@ -33,15 +33,15 @@ public class CalculationRestController {
     @Autowired
     private CalcService calcService;
 
-    @RequestMapping(value = "/calculate", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/calculate", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<TransactionLogDTO> createNewDemoAccount(@Valid @RequestBody CalcDTO calcDTO)
             throws NoSuchOperationException, DivisionZeroException {
         LOGGER.info("calculate: {}", calcDTO);
 
-        return new ResponseEntity<>(calcService.calculate(calcDTO), HttpStatus.OK);
+        return new ResponseEntity<>(calcService.calculate(calcDTO), HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/getLogs/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/getLogs/{page}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List<TransactionLogDTO>> getLogs(@PathVariable("page") Integer page)
             throws NoSuchOperationException, DivisionZeroException {
         LOGGER.info("getLogs: {}", page);
